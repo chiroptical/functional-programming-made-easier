@@ -1,4 +1,4 @@
 format:
-	find chapter*/src chapter*/test -name "*.purs" -exec purty format {} --write \;
+	purs-tidy format-in-place "chapter*/src/**/*.purs"
 
 .PHONY: format

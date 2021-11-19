@@ -22,10 +22,10 @@ ex = 1 : 2 : 3 : Nil
 r :: { firstName :: String, lastName :: String }
 r = { firstName: "Joe", lastName: "Mama" }
 
-type Person
-  = { name :: String
-    , age :: Int
-    }
+type Person =
+  { name :: String
+  , age :: Int
+  }
 
 a :: Person
 a =
@@ -34,21 +34,17 @@ a =
   in
     person { name = "Randy Cane" }
 
-data StringTriplet
-  = StringTriplet String Int Int
+data StringTriplet = StringTriplet String Int Int
 
-data StringStats
-  = StringStats
-    { string :: String
-    , length :: Int
-    , vowelCount :: Int
-    }
+data StringStats = StringStats
+  { string :: String
+  , length :: Int
+  , vowelCount :: Int
+  }
 
-type Tuple'' a b
-  = { fst :: a, snd :: b }
+type Tuple'' a b = { fst :: a, snd :: b }
 
-data Tuple' a b
-  = Tuple' { fst :: a, snd :: b }
+data Tuple' a b = Tuple' { fst :: a, snd :: b }
 
 f :: StringTriplet -> StringStats
 f (StringTriplet s l v) =
@@ -86,25 +82,25 @@ multTwo (x : y : _) = Just $ x * y
 
 multTwo _ = Nothing
 
-type Address
-  = { street :: String
-    , city :: String
-    , state :: String
-    , zip :: Int
-    }
+type Address =
+  { street :: String
+  , city :: String
+  , state :: String
+  , zip :: Int
+  }
 
-type Employee
-  = { name :: String
-    , jobTitle :: String
-    , yearsAtCompany :: Int
-    , address :: Address
-    }
+type Employee =
+  { name :: String
+  , jobTitle :: String
+  , yearsAtCompany :: Int
+  , address :: Address
+  }
 
-type Company
-  = { name :: String
-    , yearsInBusiness :: Int
-    , address :: Address
-    }
+type Company =
+  { name :: String
+  , yearsInBusiness :: Int
+  , address :: Address
+  }
 
 isCEO :: Employee -> Boolean
 isCEO { jobTitle } = jobTitle == "CEO"
